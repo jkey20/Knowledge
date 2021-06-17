@@ -46,6 +46,9 @@ viewModel에 context가 있으면 안되는 이유
 DataBinding은 왜 사용하는가
 -
 
+Data binding과 View binding의 차이
+-
+
 Retrofit을 사용하면 얻는 이점?
 -
 
