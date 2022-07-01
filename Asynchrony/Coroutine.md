@@ -5,7 +5,18 @@
 - 동시성 프로그래밍을 가능하게 하기위해
 - 쓰레드를 만드는 대신 하나의 쓰레드상에서 자신을 일시중지할 수 있도록 하여 쓰레드 생성비용을 줄임 
 - 하나의 쓰레드에서 여러개의 코루틴을 실행할 수 있음
-- 
+
+
+### Thread와의 차이점
+|| Thread | Coroutine|
+|---|---|---|
+|작업 하나의 단위|Thread|Coroutine Object|
+|동시성 보장 수단|Context Switching|Programmer Switching| 
+### 작동원리
+![image](https://user-images.githubusercontent.com/32587845/176825002-77e0e7b7-df5a-4248-be28-d631f5c49b7b.png)
+Task1을 수행하다가 비동기 작업 Task2가 발생하더라도 Context Switching 없이 같은 Thread에서 Task2를 수행할 수 있고  
+하나의 Thread에서 여러 Coroutine Object 들을 같이 수행할 수 있음  
+
 ### 사용법
 - 특정 [scope](#Scope)에 실행될 [dispatcher](#Dispatcher)를 넘겨주고 [launch](#Launch), [async](#Async)등을 이용해서 이를 실행함
 - [suspend 함수](#Suspend)는 중지되거나 취소될 수 있기 때문에 코루틴 안에서 실행되어야함
@@ -71,3 +82,7 @@
 ##### suspend fun <a id="Suspend"></a>
 - 일시중단 가능한 함수를 지칭
 - 해당 함수내에 일시중단이 가능한 작업이 있다는것을 의미
+
+
+
+[참고자료 - Thread vs Coroutine](https://velog.io/@haero_kim/Thread-vs-Coroutine-%EB%B9%84%EA%B5%90%ED%95%B4%EB%B3%B4%EA%B8%B0)
